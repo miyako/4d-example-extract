@@ -1,0 +1,8 @@
+{
+	"dependencies": {
+		"extract": {
+			"github": "miyako/extract",
+			"tag": "21.0.2"
+		}
+	}
+}

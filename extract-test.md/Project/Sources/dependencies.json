@@ -2,7 +2,7 @@
 	"dependencies": {
 		"extract": {
 			"github": "miyako/extract",
-			"tag": "21.0.5"
+			"version": "latest"
 		}
 	}
 }

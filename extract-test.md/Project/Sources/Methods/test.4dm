@@ -6,10 +6,12 @@ If (Count parameters:C259=0)
 	//execute in a worker to process callbacks
 	CALL WORKER:C1389("test"; Current method name:C684; {})
 	
+	//SHOW ON DISK(File(cs.extract.logger.me.path).platformPath)
+	
 Else 
 	
 	var $srcFolder : 4D:C1709.Folder
-	$srcFolder:=Folder:C1567(fk documents folder:K87:21).folder("samples")
+	$srcFolder:=Folder:C1567(fk resources folder:K87:11).folder("samples")
 	
 	ASSERT:C1129($srcFolder.exists)
 	
@@ -24,7 +26,7 @@ Else
 		var $extract : cs:C1710.extract.extract  //shared singleton
 		$extract:=cs:C1710.extract.extract.new($file.extension)
 		$data:={dst: $dstFolder; src: $file}
-		$task:={file: $file.getContent(); data: $data}
+		$task:={file: $file.getContent(); json: True:C214; data: $data}
 		$extract.getText($task; Formula:C1597(onResponse))
 	End for each 
 	

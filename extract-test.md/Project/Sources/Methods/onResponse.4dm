@@ -9,4 +9,6 @@ var $file : 4D:C1709.File
 $folder:=$params.context.dst
 $file:=$params.context.src
 
-$folder.file($file.fullName).setText($text)
+$folder.file($file.fullName+".json").setText($text)
+
+SHOW ON DISK:C922($folder.platformPath)
